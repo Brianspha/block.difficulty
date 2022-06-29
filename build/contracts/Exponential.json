@@ -1,0 +1,51 @@
+{
+  "abiDefinition": [],
+  "deployedAddress": "0x12C62119B8482AB4A2B4c8b98da640C322084087",
+  "className": "Exponential",
+  "args": [],
+  "gas": 68299,
+  "gasPrice": "20000000000",
+  "silent": false,
+  "track": true,
+  "deploy": true,
+  "realRuntimeBytecode": "6080604052600080fdfea265627a7a72305820515fb78695f6b70aa4",
+  "realArgs": [],
+  "code": "6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72305820515fb78695f6b70aa45568ce8079506147c750401381ee35bb6d5398e6a8321d64736f6c634300050a0032",
+  "runtimeBytecode": "6080604052600080fdfea265627a7a72305820515fb78695f6b70aa45568ce8079506147c750401381ee35bb6d5398e6a8321d64736f6c634300050a0032",
+  "linkReferences": {},
+  "swarmHash": "5568ce8079506147c750401381ee35bb6d5398e6a8321d64736f6c634300050a",
+  "gasEstimates": {
+    "creation": {
+      "codeDepositCost": "12400",
+      "executionCost": "66",
+      "totalCost": "12466"
+    },
+    "internal": {
+      "addExp(struct Exponential.Exp memory,struct Exponential.Exp memory)": "infinite",
+      "divExp(struct Exponential.Exp memory,struct Exponential.Exp memory)": "infinite",
+      "divScalar(struct Exponential.Exp memory,uint256)": "infinite",
+      "divScalarByExp(uint256,struct Exponential.Exp memory)": "infinite",
+      "divScalarByExpTruncate(uint256,struct Exponential.Exp memory)": "infinite",
+      "getExp(uint256,uint256)": "infinite",
+      "greaterThanExp(struct Exponential.Exp memory,struct Exponential.Exp memory)": "infinite",
+      "isZeroExp(struct Exponential.Exp memory)": "infinite",
+      "lessThanExp(struct Exponential.Exp memory,struct Exponential.Exp memory)": "infinite",
+      "lessThanOrEqualExp(struct Exponential.Exp memory,struct Exponential.Exp memory)": "infinite",
+      "mulExp(struct Exponential.Exp memory,struct Exponential.Exp memory)": "infinite",
+      "mulExp(uint256,uint256)": "infinite",
+      "mulExp3(struct Exponential.Exp memory,struct Exponential.Exp memory,struct Exponential.Exp memory)": "infinite",
+      "mulScalar(struct Exponential.Exp memory,uint256)": "infinite",
+      "mulScalarTruncate(struct Exponential.Exp memory,uint256)": "infinite",
+      "mulScalarTruncateAddUInt(struct Exponential.Exp memory,uint256,uint256)": "infinite",
+      "subExp(struct Exponential.Exp memory,struct Exponential.Exp memory)": "infinite",
+      "truncate(struct Exponential.Exp memory)": "infinite"
+    }
+  },
+  "functionHashes": {},
+  "filename": "/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/.embark/contracts/shared-contracts/compound/Exponential.sol",
+  "originalFilename": "contracts/shared-contracts/compound/Exponential.sol",
+  "path": "/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/contracts/shared-contracts/compound/Exponential.sol",
+  "type": "file",
+  "deploymentAccount": "0xb764e9a22978B396AE9668FD60D9B3f5737dE2ee",
+  "transactionHash": "0xdbd15a409fac95a88c5762ae7cb2c719c4357d1b34cbe961ac5ff0b5da43b502"
+}

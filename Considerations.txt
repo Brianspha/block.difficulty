@@ -1,0 +1,4 @@
+1. Tournaments are started by the admin of the room
+2. Each Room owner deploys a version of the BlockDotDifficultyTournamnetManager contract
+
+

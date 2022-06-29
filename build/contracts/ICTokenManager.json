@@ -1,0 +1,98 @@
+{
+  "abiDefinition": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tokenAddress",
+          "type": "address"
+        }
+      ],
+      "name": "whitelistCToken",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "tokenAddress",
+          "type": "address"
+        }
+      ],
+      "name": "isCToken",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tokenAddress",
+          "type": "address"
+        }
+      ],
+      "name": "discardCToken",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "tokenAddress",
+          "type": "address"
+        }
+      ],
+      "name": "DiscardCToken",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "tokenAddress",
+          "type": "address"
+        }
+      ],
+      "name": "WhitelistCToken",
+      "type": "event"
+    }
+  ],
+  "className": "ICTokenManager",
+  "args": [],
+  "gas": "auto",
+  "silent": false,
+  "track": true,
+  "deploy": false,
+  "realRuntimeBytecode": "",
+  "realArgs": [],
+  "code": "",
+  "runtimeBytecode": "",
+  "linkReferences": {},
+  "swarmHash": "",
+  "gasEstimates": null,
+  "functionHashes": {
+    "discardCToken(address)": "dd219635",
+    "isCToken(address)": "2f52e595",
+    "whitelistCToken(address)": "0a7d2e1d"
+  },
+  "filename": "/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/.embark/contracts/interfaces/ICTokenManager.sol",
+  "originalFilename": "contracts/interfaces/ICTokenManager.sol",
+  "path": "/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/contracts/interfaces/ICTokenManager.sol",
+  "type": "file",
+  "deploymentAccount": "0xb764e9a22978B396AE9668FD60D9B3f5737dE2ee"
+}

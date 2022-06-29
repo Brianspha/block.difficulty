@@ -1,0 +1,6 @@
+import EmbarkJS from '../embarkjs';
+
+const IERC165Config = {"abiDefinition":[{"constant":true,"inputs":[{"name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}],"className":"IERC165","args":[],"gas":"auto","silent":false,"track":true,"deploy":false,"realRuntimeBytecode":"","realArgs":[],"code":"","runtimeBytecode":"","linkReferences":{},"swarmHash":"","gasEstimates":null,"functionHashes":{"supportsInterface(bytes4)":"01ffc9a7"},"filename":"/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/.embark/node_modules/@openzeppelin/contracts-ethereum-package/contracts/introspection/IERC165.sol","originalFilename":"contracts//Users/siphamandlamjoli/Documents/GitHub/block.difficulty/.embark/node_modules/@openzeppelin/contracts-ethereum-package/contracts/introspection/IERC165.sol","path":"/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/contracts/.embark/node_modules/@openzeppelin/contracts-ethereum-package/contracts/introspection/IERC165.sol","type":"file","deploymentAccount":"0xb764e9a22978B396AE9668FD60D9B3f5737dE2ee"};
+const IERC165 = new EmbarkJS.Blockchain.Contract(IERC165Config);
+
+export default IERC165;
