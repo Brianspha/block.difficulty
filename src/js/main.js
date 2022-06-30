@@ -51,7 +51,7 @@ EmbarkJS.onReady((err) => {
     console.log("Recorder stopped: ", event);
     const superBuffer = new Blob(recordedBlobs, { type: "video/webm" });
     var data = await blobToVideo(superBuffer);
-    await upload(data);
+    await upload(data );
     window.document.dispatchEvent(
       new CustomEvent("playVideo", { bubbles: true, detail: data })
     );
@@ -326,7 +326,7 @@ EmbarkJS.onReady((err) => {
           setUpRecorder();
 
           var tile = new Tile({
-            obj: new Circle({ min: 20, max: 20 }, [
+            obj: new Circle({ min: 50, max: 30 }, [
               yellow,
               gray,
               black,
@@ -335,39 +335,47 @@ EmbarkJS.onReady((err) => {
             ]),
             cols: currentLevel,
             rows: currentLevel,
-            spacingH: 100,
-            spacingV: 100,
+            spacingH: 500,
+            spacingV: 500,
           }).animate({
-            props: { scale: 1 },
+            props: { scale: 2 },
             rewind: true,
             loop: true,
             ease: "elasticOut",
             time: { min: 1500, max: 3000 },
             sequence: 0,
           });
-
           var total = tile.items.length;
           tile.loop((dot) => {
             if (dot.color == dark) total--;
           });
           var world = new Container(tile.width, tile.height).center();
           tile.centerReg(world);
-          new Rectangle(tile.width, tile.height, clear, green, 2, 50, true)
+           new Rectangle(
+            tile.width + 400,
+            tile.height + 400,
+            clear,
+            green,
+            2,
+            50,
+            true
+          )
             .alp(0.5)
             .center(world);
 
           const colors = [green, yellow, black, gray];
           let currentColor = Promise.resolve(setPlayerColor(colors));
+          console.log("playerColor: ", currentColor);
           const player = new Blob({
             color: currentColor,
             borderColor: "black",
-            borderWidth: 1.5,
+            borderWidth: 5,
             interactive: false,
-            width: 1.5,
-            height: 1.5,
+            width: 5,
+            height: 5,
             text: "User 1",
           })
-            .transformPoints("scale", 0.4)
+            .transformPoints("scale", 0.8)
             .transformPoints("rotation", 90)
             .centerReg(world);
           new Label({
@@ -377,7 +385,7 @@ EmbarkJS.onReady((err) => {
           }).centerReg(player);
           frame.follow(player);
 
-          series(colors);
+          const colorSeries = series(colors);
           async function setPlayerColor(colors) {
             return new Promise((resolve) => {
               var tempColor = colors[Math.round(rand(colors.length))];
@@ -391,7 +399,7 @@ EmbarkJS.onReady((err) => {
             // each particle calls this function - to randomize the colors
             let star = new Shape(-20, -20, 40, 40);
             star.graphics.f(shuffle(colors)[0]).dp(0, 0, 18, 6, rand(0.5, 0.8));
-            return star.sca(0.5);
+            return star.sca(2);
           }
 
           const emitter = new Emitter({
@@ -418,6 +426,7 @@ EmbarkJS.onReady((err) => {
             }, // rotate one way or the other
             startPaused: true, // wait until the emitter is spurted when the ball contacts a pin
           });
+
 
           new Emitter({
             obj: new Rectangle(40, 40, [black, grey, dark]), // ZIM VEE value or PICK - lets you pass a function that will be evaluated later - with random colors
