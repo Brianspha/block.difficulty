@@ -1,0 +1,7 @@
+
+.embark/
+embarkArtifacts/
+embarkArtifacts/
+node_modules
+.env
+

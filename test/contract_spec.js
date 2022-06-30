@@ -1,8 +1,8 @@
 /*global artifacts, contract, it*/
 /**/
 var SkynetClient = require("skynet-js").SkynetClient;
-const BlockDotDifficultyTournamnetManager = artifacts.require(
-  "BlockDotDifficultyTournamnetManager"
+const BlockDotDifficultyTournamentManager = artifacts.require(
+  "BlockDotDifficultyTournamentManager"
 );
 const BlockDotDifficulty = artifacts.require("BlockDotDifficulty");
 const Sablier = artifacts.require("Sablier");
@@ -39,7 +39,7 @@ config(
   {
     contracts: {
       deploy: {
-        BlockDotDifficultyTournamnetManager: {
+        BlockDotDifficultyTournamentManager: {
           args: [],
         },
         BlockDotDifficulty: {
@@ -237,7 +237,7 @@ contract("Sablier", async function() {
     // console.log('receipt: ', receipt.events.Approval.returnValues)
   });
 });
-contract("BlockDotDifficultyTournamnetManager", async () => {
+contract("BlockDotDifficultyTournamentManager", async () => {
   createNFTS();
   console.log(JSON.stringify(nfts));
   tournamentId = web3.utils.toHex(
@@ -246,25 +246,25 @@ contract("BlockDotDifficultyTournamnetManager", async () => {
   tournamentDuration = new Date(
     new Date().setMinutes(new Date().getMinutes() + 60)
   ).getTime();
-  it("should init the BlockDotDifficultyTournamnetManager contract", async () => {
-    var receipt = await BlockDotDifficultyTournamnetManager.methods.init().send();
+  it("should init the BlockDotDifficultyTournamentManager contract", async () => {
+    var receipt = await BlockDotDifficultyTournamentManager.methods.init().send();
     assert.strictEqual(receipt != null, true);
   });
   it("should register a new tournament", async () => {
-    var receipt = await BlockDotDifficultyTournamnetManager.methods
+    var receipt = await BlockDotDifficultyTournamentManager.methods
       .registerTournament(tournamentId, tournamentDuration)
       .send();
     assert.strictEqual(receipt !== null, true);
   });
   it("should check if a tournament exists", async () => {
-    var exists = await BlockDotDifficultyTournamnetManager.methods
+    var exists = await BlockDotDifficultyTournamentManager.methods
       .tournamentActive(tournamentId)
       .call();
     console.log("tournament exists: ", exists);
     assert.strictEqual(exists, true);
   });
   it("should register a players score", async () => {
-    const receipt = await BlockDotDifficultyTournamnetManager.methods
+    const receipt = await BlockDotDifficultyTournamentManager.methods
       .registerPlayerScore(
         Math.round(Math.random() * 10000),
         [
@@ -278,27 +278,27 @@ contract("BlockDotDifficultyTournamnetManager", async () => {
     assert.strictEqual(receipt !== null, true);
   });
   it("should get tournament details", async () => {
-    var details = await BlockDotDifficultyTournamnetManager.methods
+    var details = await BlockDotDifficultyTournamentManager.methods
       .getTournamentDetails(tournamentId)
       .call();
     console.log("tournament details: ", details);
     assert.strictEqual(details !== null, true);
   });
   it("should end a tournament", async () => {
-    var receipt = await BlockDotDifficultyTournamnetManager.methods
+    var receipt = await BlockDotDifficultyTournamentManager.methods
       .endTournament(tournamentId)
       .send();
     assert.strictEqual(receipt !== null, true);
   });
 
   it("should get player tournament scores", async () => {
-    tournamentScoreIds = await BlockDotDifficultyTournamnetManager.methods
+    tournamentScoreIds = await BlockDotDifficultyTournamentManager.methods
       .getPlayerTournamentScoreIds(tournamentId)
       .call();
     assert.strictEqual(tournamentScoreIds !== null, true);
   });
   it("should get a players tournament score", async () => {
-    const player = await BlockDotDifficultyTournamnetManager.methods
+    const player = await BlockDotDifficultyTournamentManager.methods
       .getPlayerTournamentScore(tournamentScoreIds[0])
       .call();
     console.log("player: ", player);
@@ -306,47 +306,47 @@ contract("BlockDotDifficultyTournamnetManager", async () => {
   });
 
   it("should get player collected nft ids", async () => {
-    nftIds = await BlockDotDifficultyTournamnetManager.methods
+    nftIds = await BlockDotDifficultyTournamentManager.methods
       .getPlayerCollectedNFTIds()
       .call();
     console.log("nftIds: ", nftIds.length);
     assert.strictEqual(nftIds !== null, true);
   });
   it("should upload skynet url", async () => {
-    const receipt = await BlockDotDifficultyTournamnetManager.methods
+    const receipt = await BlockDotDifficultyTournamentManager.methods
       .saveRecording(url)
       .send();
     assert.strictEqual(receipt !== null, true);
   });
   it("should get all uploaded urls", async () => {
-    urls = await BlockDotDifficultyTournamnetManager.methods.getRecordingKeys().call();
+    urls = await BlockDotDifficultyTournamentManager.methods.getRecordingKeys().call();
     console.log("urls: ", urls);
     assert.strictEqual(urls.length > 0, true);
   });
   it("should get recording details", async () => {
     //const url = web3.utils.toAscii(urls[0]);
-    const details = await BlockDotDifficultyTournamnetManager.methods
+    const details = await BlockDotDifficultyTournamentManager.methods
       .getRecordingDetails(urls[0])
       .call();
     console.log("recording details: ", details);
     assert.strictEqual(details !== null, true);
   });
   it("should add token to minted", async () => {
-    const receipt = await await BlockDotDifficultyTournamnetManager.methods
+    const receipt = await await BlockDotDifficultyTournamentManager.methods
       .addToMinted(tokenID1)
       .send();
     console.log("receipt: ", receipt);
     assert.strictEqual(receipt !== null, true);
   });
   it("should get all minted tokens id", async () => {
-    const keys = await await BlockDotDifficultyTournamnetManager.methods
+    const keys = await await BlockDotDifficultyTournamentManager.methods
       .getMintedNFTKeys()
       .call();
     console.log("keys: ", keys);
     assert.strictEqual(keys.length > 0, true);
   });
   it("should get all minted tokens id", async () => {
-    const minted = await await BlockDotDifficultyTournamnetManager.methods
+    const minted = await await BlockDotDifficultyTournamentManager.methods
       .isMinted(tokenID1)
       .call();
     console.log("minted: ", minted);
@@ -388,7 +388,7 @@ contract("BlockDotDifficultyTournamnetManager", async () => {
     );
     streamId = receipt.events.CreateStream.returnValues.streamId;
     await increaseTime(200);
-    receipt = await BlockDotDifficultyTournamnetManager.methods
+    receipt = await BlockDotDifficultyTournamentManager.methods
       .purchaseTime(streamId, Token.options.address)
       .send();
     assert.strictEqual(receipt != null, true);

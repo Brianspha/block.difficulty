@@ -1,19 +1,19 @@
 {
   "abiDefinition": [],
-  "deployedAddress": "0xc2EF82586Fa386416e25e7810B77Dcd08a4727dd",
+  "deployedAddress": "0x28ee96365671927fd1bC1F2fCD9b9F6f7Cb01E56",
   "className": "CarefulMath",
   "args": [],
-  "gas": 66998,
+  "gas": 73263,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
   "deploy": true,
-  "realRuntimeBytecode": "6080604052600080fdfea265627a7a72305820bfa5801912c0322f61",
+  "realRuntimeBytecode": "6080604052600080fdfea265627a7a723058208f499813b810442cb5",
   "realArgs": [],
-  "code": "6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72305820bfa5801912c0322f61568b65b9eaf76f1d40d51cb8897f7d4ea5ff70bb65ef1464736f6c634300050a0032",
-  "runtimeBytecode": "6080604052600080fdfea265627a7a72305820bfa5801912c0322f61568b65b9eaf76f1d40d51cb8897f7d4ea5ff70bb65ef1464736f6c634300050a0032",
+  "code": "6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723058208f499813b810442cb5a4fa835823f9ac4fe0da414efa15cb0ec816ac47d9e35464736f6c634300050a0032",
+  "runtimeBytecode": "6080604052600080fdfea265627a7a723058208f499813b810442cb5a4fa835823f9ac4fe0da414efa15cb0ec816ac47d9e35464736f6c634300050a0032",
   "linkReferences": {},
-  "swarmHash": "568b65b9eaf76f1d40d51cb8897f7d4ea5ff70bb65ef1464736f6c634300050a",
+  "swarmHash": "a4fa835823f9ac4fe0da414efa15cb0ec816ac47d9e35464736f6c634300050a",
   "gasEstimates": {
     "creation": {
       "codeDepositCost": "12400",
@@ -29,10 +29,10 @@
     }
   },
   "functionHashes": {},
-  "filename": "/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/.embark/contracts/shared-contracts/compound/CarefulMath.sol",
-  "originalFilename": "contracts/shared-contracts/compound/CarefulMath.sol",
-  "path": "/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/contracts/shared-contracts/compound/CarefulMath.sol",
+  "filename": "C:/Users/Spha/Documents/Github/block.difficulty/.embark/contracts/shared-contracts/compound/CarefulMath.sol",
+  "originalFilename": "contracts\\shared-contracts\\compound\\CarefulMath.sol",
+  "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\shared-contracts\\compound\\CarefulMath.sol",
   "type": "file",
-  "deploymentAccount": "0xb764e9a22978B396AE9668FD60D9B3f5737dE2ee",
-  "transactionHash": "0xd22d6449a416a7a3a331f984cd5054e916b7ef9f28a4654690bac9e7faec30e9"
+  "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
+  "transactionHash": "0xfd050f13342a85671388c5326c450a95624251037b6bcf4b0096a32be5876e2d"
 }

@@ -7,16 +7,22 @@ import bigNumber from "bignumber.js";
 import "js-loading-overlay";
 import Sablier from "../../embarkArtifacts/contracts/Sablier";
 import generateUsername from "random-username-generator";
-console.log("JsLoadingOverlay ", JsLoadingOverlay);
+import { SkynetClient, genKeyPairFromSeed } from "skynet-js";
+require('dotenv').config({})
 Vue.use(Vuex);
+const { publicKey, privateKey } = genKeyPairFromSeed(
+  process.env.VUE_APP_APP_SECRET
+);
 generateUsername.setAdjectives(["guest"]);
 var new_username = generateUsername.generate();
+const client = new SkynetClient("https://siasky.net/");
+
 export default new Vuex.Store({
   state: {
     token:require('../../embarkArtifacts/contracts/ERC20').default,
     BlockDotDifficulty: require('../../embarkArtifacts/contracts/BlockDotDifficulty').default,
     sablier: Sablier,
-    BlockDotDifficultyTournamnetManager: require("../../embarkArtifacts/contracts/BlockDotDifficultyTournamnetManager")
+    BlockDotDifficultyTournamentManager: require("../../embarkArtifacts/contracts/BlockDotDifficultyTournamentManager")
       .default,
     contract: Contract.setProvider(window.web3.currentProvider),
     costPerMinute: 1000000000000000000, //@dev time per minute costs 1000000000000000000
@@ -27,6 +33,10 @@ export default new Vuex.Store({
     username: new_username,
     record: false,
     showPlay: false,
+    privateKey: privateKey,
+    publicKey: publicKey,
+    userAddress:"",
+    connected:false
   },
   mutations: {},
   actions: {
@@ -51,6 +61,26 @@ export default new Vuex.Store({
       console.log("deposit.toFixed(): ", payload.deposit.toFixed());
       return payload.deposit.toFixed();
     },
+    getSkyData: async function() {
+      var test = await this.state.skyClient.db.getJSON(
+        this.state.publicKey,
+        this.state.appSecret
+      );
+      if (test.data === null) {
+        test = {
+          data: [],
+          leaderboard: [],
+        };
+      }
+      return test;
+    },
+    saveSkyData: async function(context, data) {
+      await client.db.setJSON(
+        this.state.privateKey,
+        this.state.appSecret,
+        data
+      );
+    }
   },
   modules: {},
 });

@@ -6,10 +6,9 @@
   "scripts": {
     "test": "embark test",
     "start": "embark reset && embark run oasis_dev --nodashboard",
-    "serve": "vue-cli-service serve --https",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
-
   },
   "dependenciesMeta": {
     "core-js": {
@@ -25,15 +24,15 @@
     "axios": "^0.19.2",
     "bignumber.js": "^9.0.0",
     "blockies": "^0.0.2",
+    "core-js": "^3.23.3",
     "dotenv": "^8.2.0",
     "embark": "^6.0.0",
-    "embark-basic-pipeline": "^6.0.0",
     "embark-geth": "^6.0.0",
     "embarkjs": "^6.0.0",
     "js-loading-overlay": "^1.0.4",
     "random-username-generator": "^1.0.4",
     "request": "^2.88.2",
-    "skynet-js": "^0.1.0",
+    "skynet-js": "^4.3.0",
     "style-loader": "^0.23.1",
     "swarm-js": "^0.1.40",
     "sweetalert2": "^9.13.1",
@@ -45,11 +44,11 @@
     "vue-xgplayer": "^0.4.2",
     "vuetify": "^2.2.11",
     "vuex": "^3.4.0",
-    "web3-eth-contract": "^1.2.11",
-    "zimjs": "^11.0.0",
     "web3-eth": "^1.5.2",
     "web3-eth-accounts": "^1.5.3",
-    "web3-utils": "^1.4.0"
+    "web3-eth-contract": "^1.2.11",
+    "web3-utils": "^1.4.0",
+    "zimjs": "^11.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

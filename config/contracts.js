@@ -50,7 +50,7 @@ module.exports = {
       BlockDotDifficulty: {
         args: [],
       },
-      BlockDotDifficultyTournamnetManager: {
+      BlockDotDifficultyTournamentManager: {
         args: [],
       },
     },
@@ -90,7 +90,7 @@ module.exports = {
       await contracts.BlockDotDifficulty.methods
         .init("Block.Difficulty", "B.D", web3.eth.defaultAccount)
         .send();
-      await contracts.BlockDotDifficultyTournamnetManager.methods.init().send({});
+      await contracts.BlockDotDifficultyTournamentManager.methods.init().send({});
       /* for (var i = 0; i < 5; i++) {
         var endDate = new bigNumber(
           new Date(new Date().setDate(new Date().getFullYear() + 10)).getTime()
@@ -124,8 +124,8 @@ module.exports = {
       console.log("init Assets...");
       console.log("approved token...");
       console.log("init CollectorDistrubutor...");
-      console.log("init BlockDotDifficultyTournamnetManager...");
-      console.log("contracts: ", contracts.Sablier);
+      console.log("init BlockDotDifficultyTournamentManager...");
+      
     },
   },
 
@@ -148,7 +148,7 @@ module.exports = {
     BlockDotDifficulty: {
       args: [],
     },
-    BlockDotDifficultyTournamnetManager: {
+    BlockDotDifficultyTournamentManager: {
       args: [],
     },
   },
@@ -188,7 +188,7 @@ module.exports = {
     await contracts.BlockDotDifficulty.methods
       .init("Block.Difficulty", "B.D", web3.eth.defaultAccount)
       .send();
-    await contracts.BlockDotDifficultyTournamnetManager.methods.init().send({});
+    await contracts.BlockDotDifficultyTournamentManager.methods.init().send({});
     /* for (var i = 0; i < 5; i++) {
       var endDate = new bigNumber(
         new Date(new Date().setDate(new Date().getFullYear() + 10)).getTime()
@@ -222,8 +222,8 @@ module.exports = {
     console.log("init Assets...");
     console.log("approved token...");
     console.log("init CollectorDistrubutor...");
-    console.log("init BlockDotDifficultyTournamnetManager...");
-    console.log("contracts: ", contracts.Sablier);
+    console.log("init BlockDotDifficultyTournamentManager...");
+    
   }},
 
   // merges with the settings in default

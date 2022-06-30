@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import BlockDotDifficulty from "../../embarkArtifacts/contracts/BlockDotDifficulty";
-import BlockDotDifficultyTournamnetManager from "../../embarkArtifacts/contracts/BlockDotDifficultyTournamnetManager";
+import BlockDotDifficultyTournamentManager from "../../embarkArtifacts/contracts/BlockDotDifficultyTournamentManager";
 import Token from "../../embarkArtifacts/contracts/ERC20";
 import bigNumber from "bignumber.js";
 import Contract from "web3-eth-contract";
@@ -8,7 +8,6 @@ import Web3 from "web3";
 import "js-loading-overlay";
 import axios from "axios";
 import { SkynetClient } from "skynet-js";
-import request from "request";
 import EmbarkJS from "../../embarkArtifacts/embarkjs";
 import utils from "web3-utils";
 var web3 = new Web3("http://localhost:8546");
@@ -18,7 +17,7 @@ axios.defaults.headers.post["Content-Type"] =
   "application/x-www-form-urlencoded";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 const client = new SkynetClient("https://siasky.net");
-var adminAddress = "0x3cB1c48dc6984c9C058EfB5BEC358F4B598EF0D8";
+var adminAddress = "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0";
 //var web3 = new Web3("http://localhost:8546");
 var user = JSON.parse(localStorage.getItem("username"));
 let mediaRecorder = null;
@@ -27,10 +26,8 @@ var accounts = [],
   recordedBlobs = [];
 console.log("window.URL: ", URL);
 let stream = null;
-const skynetURL = "https://siasky.net/skynet/skyfile";
-const swarm = require("swarm-js").at("https://swarm-gateways.net");
+
 EmbarkJS.onReady((err) => {
-  configureStorage();
   checkMetamask();
   setUpBackEvent();
   initGame();
@@ -43,7 +40,6 @@ EmbarkJS.onReady((err) => {
   function hideLoading() {
     JsLoadingOverlay.hide();
   }
-  function configureStorage() {}
   function handleSourceOpen(event) {
     console.log("MediaSource opened");
     sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
@@ -73,25 +69,23 @@ EmbarkJS.onReady((err) => {
   }
   async function upload(file) {
     showLoading();
-    return new Promise((resolve) => {
-      try {
-        swarm.upload(file).then(async (hash) => {
-          console.log("Uploaded file. Address:", hash);
-          await Promise.resolve(saveRecording(hash));
-          hideLoading();
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    });
+    try {
+      const { skylink } = await client.uploadFile(file);
+      console.log("Uploaded file. Address:", skylink);
+      await Promise.resolve(saveRecording(skylink));
+      hideLoading();
+    } catch (error) {
+      console.log(error);
+    }
   }
-  async function saveRecording(hash) {
-    return new Promise(async (resolve) => {
-      const receipt = await BlockDotDifficultyTournamnetManager.methods
-        .saveRecording(utils.asciiToHex(hash))
-        .send();
-      resolve("receipt from adding video hash", receipt);
-    });
+  /**
+   * @dev This could easily be stored on skyDB but ran out of time
+   * @param skylink The skynet url 
+   */
+  async function saveRecording(skylink) {
+    await BlockDotDifficultyTournamentManager.methods
+      .saveRecording(utils.asciiToHex(skylink))
+      .send();
   }
   function handleDataAvailable(event) {
     if (event.data && event.data.size > 0) {
@@ -201,13 +195,9 @@ EmbarkJS.onReady((err) => {
   function initGame() {
     web3.eth.getAccounts().then((acc) => {
       accounts = acc;
-      console.log("accounts: ", acc);
       web3.eth.defaultAccount = accounts[1];
-      adminAddress = accounts[0];
     });
-    console.log("web3.eth.defaultAccount: ", web3.eth.defaultAccount);
     Contract.setProvider("http://localhost:8546"); //@dev change when not in dev mode
-   // adminAddress = "0xFB109416C778B5Fe58d51Caf2B513609156A08fD";
     console.log("connected DApp..");
     const assets = ["ESKARGOT.ttf"];
     const path = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1604712/";
@@ -241,10 +231,15 @@ EmbarkJS.onReady((err) => {
       // LOGO
       // we make the logo intro relevant to the game
       // we pretend to place the logo on the shadow
-      new Label("Block.Difficulty", 130, "game", dark).center(intro).mov(10, 10);
-      const collector = new Label("Block.Difficulty", 130, "game", black).center(
-        intro
-      );
+      new Label("Block.Difficulty", 130, "game", dark)
+        .center(intro)
+        .mov(10, 10);
+      const collector = new Label(
+        "Block.Difficulty",
+        130,
+        "game",
+        black
+      ).center(intro);
       collector.wiggle("x", collector.x, -5, 10, 700, 1000);
       collector.wiggle("y", collector.y, -5, 10, 700, 1000);
       var start = new Button({
@@ -264,6 +259,8 @@ EmbarkJS.onReady((err) => {
       }, 6000);
 
       async function init() {
+        const blockDetails = await web3.eth.getBlock("latest");
+        console.log("latest block details: ", blockDetails);
         // often need below - so consider it part of the template
         let currentLevelTime = 30;
         let currentLevel = 9;
@@ -294,7 +291,7 @@ EmbarkJS.onReady((err) => {
           }
           var tempTokens = [];
           tokens.map(async (token) => {
-            var minted = await BlockDotDifficultyTournamnetManager.methods
+            var minted = await BlockDotDifficultyTournamentManager.methods
               .isMinted(token.id)
               .call();
             if (!minted) {
@@ -316,6 +313,7 @@ EmbarkJS.onReady((err) => {
           createPauseEvent();
           createContinueEvent();
           setUpRecorder();
+
           var tile = new Tile({
             obj: new Circle({ min: 50, max: 30 }, [
               yellow,
@@ -341,11 +339,9 @@ EmbarkJS.onReady((err) => {
           tile.loop((dot) => {
             if (dot.color == dark) total--;
           });
-
           var world = new Container(tile.width, tile.height).center();
-
           tile.centerReg(world);
-          var edges = new Rectangle(
+          new Rectangle(
             tile.width + 400,
             tile.height + 400,
             clear,
@@ -359,7 +355,6 @@ EmbarkJS.onReady((err) => {
 
           const colors = [green, yellow, black, gray];
           let currentColor = Promise.resolve(setPlayerColor(colors));
-          console.log("playerColor: ", currentColor);
           const player = new Blob({
             color: currentColor,
             borderColor: "black",
@@ -379,7 +374,7 @@ EmbarkJS.onReady((err) => {
           }).centerReg(player);
           frame.follow(player);
 
-          const colorSeries = series(colors);
+          series(colors);
           async function setPlayerColor(colors) {
             return new Promise((resolve) => {
               var tempColor = colors[Math.round(rand(colors.length))];
@@ -421,7 +416,7 @@ EmbarkJS.onReady((err) => {
             startPaused: true, // wait until the emitter is spurted when the ball contacts a pin
           });
 
-          const pieces = new Emitter({
+          new Emitter({
             obj: new Rectangle(40, 40, [black, grey, dark]), // ZIM VEE value or PICK - lets you pass a function that will be evaluated later - with random colors
             random: { rotation: { min: 0, max: 360 } }, // start at random rotations for star
             num: 3, // send two at once
@@ -499,9 +494,6 @@ EmbarkJS.onReady((err) => {
               false
             );
           }
-          function clearStorage() {
-            localStorage.clear();
-          }
           function continuePlay() {
             controller.speed = speed;
             emitter.particles.alp(1);
@@ -560,7 +552,7 @@ EmbarkJS.onReady((err) => {
             backgroundColor: black,
             rollBackgroundColor: green,
             corner: 5,
-            width: 250,
+            width: 100,
           })
             .sca(0.8)
             .pos(30, 30, RIGHT, BOTTOM);
@@ -669,20 +661,12 @@ EmbarkJS.onReady((err) => {
               ).toFixed();
               startDate = Math.round(startDate / 1000);
               endDate = Math.round(endDate / 1000);
-              console.log("startDate: ", startDate);
-              console.log("endDate: ", endDate);
               var timeDelta = new bigNumber(endDate - startDate).toFixed();
               var deposit = calculateDeposit(
                 timeDelta,
                 new bigNumber(valuePerCollection).multipliedBy(
                   collected.collected.length
                 )
-              );
-              console.log(
-                "SablierContract: ",
-                SablierContract.address,
-                " token: ",
-                Token.address
               );
               Token.methods
                 .approve(SablierContract.address, deposit)
@@ -722,25 +706,21 @@ EmbarkJS.onReady((err) => {
                 });
             }
           }
-          async function transferNFT(collected) {
+          /**
+           * @dev probably not the best way to do this but meh
+           * @param collectedNFTs The total number of collected NFTs
+           * @returns NFT ids
+           */
+          async function transferNFT(collectedNFTs) {
             return new Promise(async (resolve) => {
               var tempNFTIds = [];
-              collected.collected.map(async (nft) => {
+              collectedNFTs.collected.map(async (nft) => {
                 console.log("value nft: ", nft);
                 if (!nft) return;
                 score += nft.value;
                 console.log("score: ", score);
                 nftIds.push(nft.id);
                 tempNFTIds.push(BlockDotDifficulty.options.address);
-                var ownerOf = await BlockDotDifficulty.methods
-                  .ownerOf(nft.id)
-                  .call();
-                console.log(
-                  "ownerOf: ",
-                  ownerOf,
-                  " adminAddress: ",
-                  adminAddress
-                );
                 await BlockDotDifficulty.methods
                   .transferFrom(adminAddress, web3.eth.defaultAccount, nft.id)
                   .send({ gas: 6000000, from: adminAddress });

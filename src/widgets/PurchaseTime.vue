@@ -214,7 +214,7 @@ export default {
             this.$store.dispatch("hideLoading");
           } else {
             var streamId = receipt.events.CreateStream.returnValues.streamId;
-            receipt = await this.$store.state.BlockDotDifficultyTournamnetManager.methods
+            receipt = await this.$store.state.BlockDotDifficultyTournamentManager.methods
               .purchaseTime(streamId, this.tokenAddress)
               .send({ gas: 6000000, from: this.ethAddress });
             this.$store.dispatch("hideLoading");

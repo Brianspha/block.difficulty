@@ -17,7 +17,7 @@
               <v-form>
                 <v-text-field
                   label="Username"
-                  v-model="$store.state.username"
+                  v-model="$store.state.userAddress"
                   name="username"
                   prepend-icon="mdi-account"
                   type="text"
@@ -57,11 +57,10 @@ export default {
   },
   methods: {
     loadGame() {
-      console.log("this.$router.push({ path: " / " })", this.$router);
       localStorage.setItem(
         "username",
         JSON.stringify({
-          username: this.$store.state.username,
+          username: this.$store.state.userAddress,
           record: this.$store.state.record,
         })
       );

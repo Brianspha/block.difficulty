@@ -90,9 +90,9 @@
     "isCToken(address)": "2f52e595",
     "whitelistCToken(address)": "0a7d2e1d"
   },
-  "filename": "/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/.embark/contracts/interfaces/ICTokenManager.sol",
-  "originalFilename": "contracts/interfaces/ICTokenManager.sol",
-  "path": "/Users/siphamandlamjoli/Documents/GitHub/block.difficulty/contracts/interfaces/ICTokenManager.sol",
+  "filename": "C:/Users/Spha/Documents/Github/block.difficulty/.embark/contracts/interfaces/ICTokenManager.sol",
+  "originalFilename": "contracts\\interfaces\\ICTokenManager.sol",
+  "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\interfaces\\ICTokenManager.sol",
   "type": "file",
-  "deploymentAccount": "0xb764e9a22978B396AE9668FD60D9B3f5737dE2ee"
+  "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0"
 }

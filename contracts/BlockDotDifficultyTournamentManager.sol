@@ -7,7 +7,7 @@ import "@openzeppelin/upgrades/contracts/Initializable.sol";
  *@dev contract definition
     @notice contract contains function which were going to be used in a different version of the game
  */
-contract BlockDotDifficultyTournamnetManager is Initializable {
+contract BlockDotDifficultyTournamentManager is Initializable {
     using SafeMath for uint256;
     /**=========================================structs definitions=========================================*/
     struct Player {
