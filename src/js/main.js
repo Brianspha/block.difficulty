@@ -80,7 +80,7 @@ EmbarkJS.onReady((err) => {
   }
   /**
    * @dev This could easily be stored on skyDB but ran out of time
-   * @param skylink The skynet url 
+   * @param skylink The skynet url
    */
   async function saveRecording(skylink) {
     await BlockDotDifficultyTournamentManager.methods
@@ -263,8 +263,14 @@ EmbarkJS.onReady((err) => {
         console.log("latest block details: ", blockDetails);
         // often need below - so consider it part of the template
         let currentLevelTime = 30;
-        let currentLevel = 9;
-        let sizePenalty = 5;
+        let currentLevel =
+          blockDetails.totalDifficulty % 2 == 0
+            ? Math.floor(Math.random() * (10 - 3 + 1) + 10)
+            : 5;
+        let sizePenalty =
+          blockDetails.totalDifficulty % 2 == 0
+            ? Math.floor(Math.random() * (10 - 5 + 1) + 10)
+            : 5;
         await initLocalStorage();
         await start();
         if (user.record) {
@@ -291,7 +297,7 @@ EmbarkJS.onReady((err) => {
           }
           var tempTokens = [];
           tokens.map(async (token) => {
-            var minted = await BlockDotDifficultyTournamentManager.methods
+            var minted = await BlockDotDifficultyTournamentManager.methods //@dev we need to burn tokens not collected :XD
               .isMinted(token.id)
               .call();
             if (!minted) {
@@ -324,8 +330,8 @@ EmbarkJS.onReady((err) => {
             ]),
             cols: currentLevel,
             rows: currentLevel,
-            spacingH: blockDetails.totalDifficulty% 2 ==0?Math.floor(Math.random() * (500 - 250 + 1) + 250):Math.floor(Math.random() * (400 - 200 + 1) + 200),
-            spacingV: blockDetails.totalDifficulty% 2 ==0?Math.floor(Math.random() * (500 - 250 + 1) + 250):Math.floor(Math.random() * (300 - 150 + 1) + 150),
+            spacingH: 300,
+            spacingV: 300,
           }).animate({
             props: { scale: 2 },
             rewind: true,
@@ -341,15 +347,7 @@ EmbarkJS.onReady((err) => {
           });
           var world = new Container(tile.width, tile.height).center();
           tile.centerReg(world);
-          new Rectangle(
-            tile.width + 50,
-            tile.height + 50,
-            clear,
-            green,
-            2,
-            50,
-            true
-          )
+          new Rectangle(tile.width, tile.height, clear, green, 2, 50, true)
             .alp(0.5)
             .center(world);
 
