@@ -324,8 +324,8 @@ EmbarkJS.onReady((err) => {
             ]),
             cols: currentLevel,
             rows: currentLevel,
-            spacingH: 500,
-            spacingV: 500,
+            spacingH: blockDetails.totalDifficulty% 2 ==0?Math.floor(Math.random() * (500 - 250 + 1) + 250):Math.floor(Math.random() * (400 - 200 + 1) + 200),
+            spacingV: blockDetails.totalDifficulty% 2 ==0?Math.floor(Math.random() * (500 - 250 + 1) + 250):Math.floor(Math.random() * (300 - 150 + 1) + 150),
           }).animate({
             props: { scale: 2 },
             rewind: true,
@@ -342,8 +342,8 @@ EmbarkJS.onReady((err) => {
           var world = new Container(tile.width, tile.height).center();
           tile.centerReg(world);
           new Rectangle(
-            tile.width + 400,
-            tile.height + 400,
+            tile.width + 50,
+            tile.height + 50,
             clear,
             green,
             2,
