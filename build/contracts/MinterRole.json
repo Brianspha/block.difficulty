@@ -87,10 +87,10 @@
       "signature": "0xe94479a9f7e1952cc78f2d6baab678adc1b772d936c6583def489e524cb66692"
     }
   ],
-  "deployedAddress": "0x1764ddff4177bA2FaFE18C63a376c1b8e6E5f6E3",
+  "deployedAddress": "0x3AB47976132fCEA2801C2d27C173dE82ad6c29F6",
   "className": "MinterRole",
   "args": [],
-  "gas": 349919,
+  "gas": 338315,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -129,5 +129,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\.embark\\node_modules\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\roles\\MinterRole.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0x75580728fc0b83460b20342c0cfeedecc35c5548f3a313694d9743bbce45fcef"
+  "transactionHash": "0xa0a31bdd55485f87ac981183e6be657066e38312b1e2e7fc29f5edccfc6e73f1"
 }

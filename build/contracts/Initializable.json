@@ -1,9 +1,9 @@
 {
   "abiDefinition": [],
-  "deployedAddress": "0xcaE7f81F48E4D91d0F423e37E9b6C479364a2558",
+  "deployedAddress": "0x042d6C5962bFC7339c535E0B7BbFE4159B8214A0",
   "className": "Initializable",
   "args": [],
-  "gas": 71297,
+  "gas": 68482,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -30,5 +30,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\.embark\\node_modules\\@openzeppelin\\upgrades\\contracts\\Initializable.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xd07b348288fb173bdd709dc29260807aa6454144295042812415483ed9ab18e1"
+  "transactionHash": "0x5f9a5700acd1a14687d5fb9a776b47b7a8c2419713b0ff414b1366be8f3d6f63"
 }

@@ -44,10 +44,10 @@
       "signature": "constructor"
     }
   ],
-  "deployedAddress": "0x6A78486a463539DF8653E7156D00F2b35EF2bC9f",
+  "deployedAddress": "0x95092DBc1Ae82944229100680a9c26d0A2D4136d",
   "className": "StreamManager",
   "args": [],
-  "gas": 187883,
+  "gas": 180708,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -78,5 +78,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\StreamManager.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xb70b9660389bf989e46501da30b8ede31ed3c9bc0468b72a556b600a8577ab6d"
+  "transactionHash": "0xece1cda1387bdc6a7bea78a9c3f6918f75cef7d01155a3d7302a583ee9274286"
 }

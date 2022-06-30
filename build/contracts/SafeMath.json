@@ -1,9 +1,9 @@
 {
   "abiDefinition": [],
-  "deployedAddress": "0xd3E347EF48d271AdEB252C46d649e784e8775fB8",
+  "deployedAddress": "0x19D1A45935f794268eC91bc4DF1556cF8F6D179D",
   "className": "SafeMath",
   "args": [],
-  "gas": 74773,
+  "gas": 76705,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -37,5 +37,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\.embark\\node_modules\\@openzeppelin\\contracts-ethereum-package\\contracts\\math\\SafeMath.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xffddbe7866fe88b76e8382fba0769676c2c73709b9a5a00ff33e597cb1e552b9"
+  "transactionHash": "0xea7270e53970d5f9a3a779887f5d566942b604bf9b2dc2168caea89251362b73"
 }

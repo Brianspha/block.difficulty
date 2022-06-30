@@ -31,10 +31,10 @@
       "signature": "0x8129fc1c"
     }
   ],
-  "deployedAddress": "0xC37D4bA63fE3a745166837fC94074c4dC1AD8762",
+  "deployedAddress": "0xCf4C51ba7e1F7De29EC797D1e2ac64bFd9F679C4",
   "className": "ERC165",
   "args": [],
-  "gas": 177874,
+  "gas": 178571,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -68,5 +68,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\.embark\\node_modules\\@openzeppelin\\contracts-ethereum-package\\contracts\\introspection\\ERC165.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xd0564b96823dffb304d1b3667a51ef3ea3b50d27f1e4cb4d60b6bc1661155f41"
+  "transactionHash": "0x2df964965b1990d61fb221b70ccd2e37034458e5f8d0fd2b4df6eb656336ae7f"
 }

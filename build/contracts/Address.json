@@ -1,9 +1,9 @@
 {
   "abiDefinition": [],
-  "deployedAddress": "0xEA798Eb48499FC92D7ee401F05844746731bA389",
+  "deployedAddress": "0xc72C5D3d7C3a283635e95F29D250E1B0E6cD8667",
   "className": "Address",
   "args": [],
-  "gas": 74714,
+  "gas": 77730,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -32,5 +32,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\.embark\\node_modules\\@openzeppelin\\contracts-ethereum-package\\contracts\\utils\\Address.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xc15bd9aa8eeb50475b458b53eed971fd987d4aedf34db860f84e5c7bc5a0b4da"
+  "transactionHash": "0xb154baa634e353f5d7e9a29c5b532cc451c89d96840d0eccd01265bd9612ddc2"
 }

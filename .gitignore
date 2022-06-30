@@ -4,4 +4,9 @@ embarkArtifacts/
 embarkArtifacts/
 node_modules
 .env
+build
 
+build/*
+build/
+embarkArtifacts/contracts/**
+embarkArtifacts/contracts/

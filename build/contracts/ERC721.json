@@ -295,10 +295,10 @@
       "signature": "0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31"
     }
   ],
-  "deployedAddress": "0x30D8c60afF6c8DC775D09BAA98a2Fdb881905668",
+  "deployedAddress": "0x9E986A171bfdA783a6AaC83883f9607C66DE2B8f",
   "className": "ERC721",
   "args": [],
-  "gas": 1080026,
+  "gas": 1105384,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -361,5 +361,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\.embark\\node_modules\\@openzeppelin\\contracts-ethereum-package\\contracts\\token\\ERC721\\ERC721.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0x52a3f19451b6fc678b906d2e5f2db3d6e38c486b13fbdc77c27900833d9dad2a"
+  "transactionHash": "0xef40ca0a8cd5586f5cf171b09f93365860d693283870de4d134ef926664676c2"
 }

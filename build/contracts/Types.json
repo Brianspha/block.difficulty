@@ -1,9 +1,9 @@
 {
   "abiDefinition": [],
-  "deployedAddress": "0xe027c495b1D2C658930D386D5a42e149D7e358Eb",
+  "deployedAddress": "0x80f19cDAC28260BeE4963Ec7eBAB26C8a5131548",
   "className": "Types",
   "args": [],
-  "gas": 77352,
+  "gas": 74407,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -27,5 +27,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\Types.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0x4a6d71114860ff6a72ddd8dc56cdbc38be9eca22787d31ce8da3ca50b4537380"
+  "transactionHash": "0xc155adb49d7243a4e6647347eb69beb55e86449bb01e4487332ac356e4ac49e8"
 }

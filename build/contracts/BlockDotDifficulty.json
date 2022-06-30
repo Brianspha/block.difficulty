@@ -639,10 +639,10 @@
       "signature": "0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31"
     }
   ],
-  "deployedAddress": "0x8fd04EC49F2676fE6de1339c716B00254175DB9e",
+  "deployedAddress": "0x577619b3d02844CE9FE502DF38cc9b4a09F6a568",
   "className": "BlockDotDifficulty",
   "args": [],
-  "gas": 2488744,
+  "gas": 2341425,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -725,5 +725,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\BlockDotDifficulty.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0x44d926a4fcdbc764ef8c2d324270ebff704802e285c96eabe0fd4f28603cbd6a"
+  "transactionHash": "0x4b57b9f6ac63ea9038dcbacb374fc3fc545a897982933c63e77df77c80778ba7"
 }

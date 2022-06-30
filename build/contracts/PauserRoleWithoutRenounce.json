@@ -77,10 +77,10 @@
       "signature": "0xcd265ebaf09df2871cc7bd4133404a235ba12eff2041bb89d9c714a2621c7c7e"
     }
   ],
-  "deployedAddress": "0x11A6caE0bEFB4629AD7a7d9bfAF214628aB0B6a5",
+  "deployedAddress": "0xcf72608943B6F9CEED6F8f9636A4d46bb7Ed5FB5",
   "className": "PauserRoleWithoutRenounce",
   "args": [],
-  "gas": 285579,
+  "gas": 280815,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -117,5 +117,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\shared-contracts\\lifecycle\\PauserRoleWithoutRenounce.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xf348efaaff65f39398e06c9bee17bbfd741b1e6d9602479d59b93d9799902cdf"
+  "transactionHash": "0x954e34ea3b809e29b0bd75ebe51c44a7e2bbc5a72b3de4d36152aa920c5326cc"
 }

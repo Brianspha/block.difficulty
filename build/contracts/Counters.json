@@ -1,9 +1,9 @@
 {
   "abiDefinition": [],
-  "deployedAddress": "0x0DfC2CBA563B8c8fEC0b8e17bf672E624E4B8490",
+  "deployedAddress": "0x33d0879141d9c9D58b85464540E7ADB20AdF7f2E",
   "className": "Counters",
   "args": [],
-  "gas": 72498,
+  "gas": 74022,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -32,5 +32,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\.embark\\node_modules\\@openzeppelin\\contracts-ethereum-package\\contracts\\drafts\\Counters.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0x8bc59cdb52022ffd6c6cf03e2d880d7652f68d76bb8991ae70f74d741649fc08"
+  "transactionHash": "0xf22d2473be51e9158752c1051ac4138df9eb0c26f7f7c1db80469f8285e8de73"
 }

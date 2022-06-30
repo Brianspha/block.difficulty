@@ -69,10 +69,10 @@
       "signature": "constructor"
     }
   ],
-  "deployedAddress": "0xB2770cE8CfEb38954A480B0bDCaeCC01b5b1526E",
+  "deployedAddress": "0x3143f48f589748b7Fce3486a09a99CA76F0174F2",
   "className": "Migrations",
   "args": [],
-  "gas": 174510,
+  "gas": 177700,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -107,5 +107,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\Migrations.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0x45e0ece6b3f91c10bd18f4e7772914c7780b7f8eb23d734983a7e3a172697da5"
+  "transactionHash": "0x4290cbb9dafeef0b57914dabf0c41c838b9d9cf5c00bb9f509f803133f57e626"
 }

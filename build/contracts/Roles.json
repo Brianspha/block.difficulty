@@ -1,9 +1,9 @@
 {
   "abiDefinition": [],
-  "deployedAddress": "0x4656367900A1A43ba4d80e91A8c7C4E60b69D54E",
+  "deployedAddress": "0x2B7Be0DCEcb9140cbb089e320268A8C4DF04a59b",
   "className": "Roles",
   "args": [],
-  "gas": 73140,
+  "gas": 74769,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -32,5 +32,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\.embark\\node_modules\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\Roles.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xc014ed2ff3e7f30a45bac334277ef3ce1a620dbf29661bf1eb9a9f0eb42f5629"
+  "transactionHash": "0x0a411da061396a5297e68f9479c34c4accc75bf7dd98facd9e6061fa6015a474"
 }

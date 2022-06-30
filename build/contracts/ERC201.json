@@ -302,11 +302,11 @@
       "signature": "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925"
     }
   ],
-  "deployedAddress": "0x14b10de97f5fdfe8f650E81b371080854d3BEfaD",
+  "deployedAddress": "0x5f2E7449f9d67B645ac9302B22b2219F8f7e9feA",
   "className": "ERC201",
   "args": [],
   "instanceOf": "ERC20",
-  "gas": 920623,
+  "gas": 904391,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -363,5 +363,5 @@
   "linkReferences": {},
   "type": "instance",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xa32d86856d03f9174093886805eeb21c2425dc38828f978e284e933981a47fe2"
+  "transactionHash": "0x26e933711f429cde281794e2891e069c4192b0715be413999d82b3232d4a7c29"
 }

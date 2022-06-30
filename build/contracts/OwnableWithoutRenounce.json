@@ -79,10 +79,10 @@
       "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
     }
   ],
-  "deployedAddress": "0x4659349D75393C0c63BCe9126EA2F932cdF1fA76",
+  "deployedAddress": "0xb4F2981CadF328385fE12F1C35C05f1Dcb46398F",
   "className": "OwnableWithoutRenounce",
   "args": [],
-  "gas": 238598,
+  "gas": 236155,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -120,5 +120,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\shared-contracts\\lifecycle\\OwnableWithoutRenounce.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0x3cda6589be4f39bfe52d9a763621ccba882aafe628720a5e56b53f1baede5ccf"
+  "transactionHash": "0x7ba350d08b2ac490052f3af738956d3e427044d64896726670b6cc7c2062835a"
 }

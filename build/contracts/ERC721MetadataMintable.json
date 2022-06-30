@@ -493,10 +493,10 @@
       "signature": "0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31"
     }
   ],
-  "deployedAddress": "0x0b390C469e4359A9b4D435AC81Bb33bb3a0aaff2",
+  "deployedAddress": "0xAab6584de266fC687534C1E17C197bbB7B7f4Ae7",
   "className": "ERC721MetadataMintable",
   "args": [],
-  "gas": 2018580,
+  "gas": 1925984,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -565,5 +565,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\.embark\\node_modules\\@openzeppelin\\contracts-ethereum-package\\contracts\\token\\ERC721\\ERC721MetadataMintable.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xdcb95eec5bd93d3ff0f55f866b2e286b998d2511e0645fca103a286cb4fb6bf3"
+  "transactionHash": "0x71c6a9700f4ac877e7c9060ac2a5aecb057b7045d5da929e8814b4f39cb83d3e"
 }

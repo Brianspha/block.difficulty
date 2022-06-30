@@ -23,7 +23,7 @@ Everything is still a WIP and hella code cleaning i had to digress from the orig
 
 Use the mouse left click to move Block.Difficulty around\n
 GamePlay\n
-- The game basically works on the premise that you collect as the dots which correspond to Block.Difficultys current color
+- The game basically works on the premise that you collect as the dots which correspond to Block.Difficulty current color
 - Collecting an incorrect color reduces the size of Block.Difficulty
 - Block.Difficulty changes color constantly!
 - Collecting an incorrect color also reduces the time given to complete the current level

@@ -10,6 +10,8 @@ import axios from "axios";
 import { SkynetClient } from "skynet-js";
 import EmbarkJS from "../../embarkArtifacts/embarkjs";
 import utils from "web3-utils";
+const swarm = require("swarm-js").at("https://swarm-gateways.net");
+
 var web3 = new Web3("http://localhost:8546");
 const SablierContract = require("../../embarkArtifacts/contracts/Sablier")
   .default;
@@ -49,7 +51,7 @@ EmbarkJS.onReady((err) => {
     console.log("Recorder stopped: ", event);
     const superBuffer = new Blob(recordedBlobs, { type: "video/webm" });
     var data = await blobToVideo(superBuffer);
-    await Promise.resolve(upload(data));
+    await upload(data);
     window.document.dispatchEvent(
       new CustomEvent("playVideo", { bubbles: true, detail: data })
     );
@@ -69,14 +71,17 @@ EmbarkJS.onReady((err) => {
   }
   async function upload(file) {
     showLoading();
-    try {
-      const { skylink } = await client.uploadFile(file);
-      console.log("Uploaded file. Address:", skylink);
-      await Promise.resolve(saveRecording(skylink));
-      hideLoading();
-    } catch (error) {
-      console.log(error);
-    }
+    return new Promise((resolve) => {
+      try {
+        swarm.upload(file).then(async (hash) => {
+          console.log("Uploaded file. Address:", hash);
+          await Promise.resolve(saveRecording(hash));
+          hideLoading();
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    });
   }
   /**
    * @dev This could easily be stored on skyDB but ran out of time
@@ -204,8 +209,8 @@ EmbarkJS.onReady((err) => {
     var paused = false;
     const frame = new Frame(
       "fit",
-      window.innerWidth - 300,
-      768,
+      window.innerWidth - 100,
+      800,
       darker,
       green,
       assets,
@@ -321,7 +326,7 @@ EmbarkJS.onReady((err) => {
           setUpRecorder();
 
           var tile = new Tile({
-            obj: new Circle({ min: 50, max: 30 }, [
+            obj: new Circle({ min: 20, max: 20 }, [
               yellow,
               gray,
               black,
@@ -330,10 +335,10 @@ EmbarkJS.onReady((err) => {
             ]),
             cols: currentLevel,
             rows: currentLevel,
-            spacingH: 300,
-            spacingV: 300,
+            spacingH: 100,
+            spacingV: 100,
           }).animate({
-            props: { scale: 2 },
+            props: { scale: 1 },
             rewind: true,
             loop: true,
             ease: "elasticOut",
@@ -356,13 +361,13 @@ EmbarkJS.onReady((err) => {
           const player = new Blob({
             color: currentColor,
             borderColor: "black",
-            borderWidth: 5,
+            borderWidth: 1.5,
             interactive: false,
-            width: 5,
-            height: 5,
+            width: 1.5,
+            height: 1.5,
             text: "User 1",
           })
-            .transformPoints("scale", 0.8)
+            .transformPoints("scale", 0.4)
             .transformPoints("rotation", 90)
             .centerReg(world);
           new Label({
@@ -386,7 +391,7 @@ EmbarkJS.onReady((err) => {
             // each particle calls this function - to randomize the colors
             let star = new Shape(-20, -20, 40, 40);
             star.graphics.f(shuffle(colors)[0]).dp(0, 0, 18, 6, rand(0.5, 0.8));
-            return star.sca(2);
+            return star.sca(0.5);
           }
 
           const emitter = new Emitter({

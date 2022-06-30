@@ -12,39 +12,26 @@
             </v-stepper-step>
             <v-stepper-content step="1">
               <v-col cols="12" sm="6" md="3">
-                <v-text-field
-                  v-model="ethAddress"
-                  :value="ethAddress"
-                  label="Eth Address"
-                  outlined
-                  counter
-                  maxlength="42"
-                  :rules="[
+                <v-text-field v-model="ethAddress" :value="ethAddress" label="Eth Address" outlined counter
+                  maxlength="42" :rules="[
                     rules.required,
                     rules.counter,
                     rules.validEthAddress,
-                  ]"
-                ></v-text-field>
+                  ]"></v-text-field>
               </v-col>
               <v-btn v-if="ethAddress" color="primary" @click="currentStep = 2">Continue</v-btn>
               <v-btn text>Cancel</v-btn>
             </v-stepper-content>
             <v-stepper-step :complete="currentStep > 2" step="2">Enter Token Address</v-stepper-step>
+            <small>This is the token you wish to use to purchase time with</small>
             <v-stepper-content step="2">
               <v-col cols="12" sm="6" md="3">
-                <v-text-field
-                  v-model="tokenAddress"
-                  :value="tokenAddress"
-                  label="ERC20 Token Address"
-                  outlined
-                  counter
-                  maxlength="42"
-                  :rules="[
+                <v-text-field v-model="tokenAddress" :value="tokenAddress" label="ERC20 Token Address" outlined counter
+                  maxlength="42" :rules="[
                     rules.required,
                     rules.counter,
                     rules.validEthAddress,
-                  ]"
-                ></v-text-field>
+                  ]"></v-text-field>
               </v-col>
               <v-btn @click="currentStep = 1">Back</v-btn>
               <v-btn v-if="tokenAddress" color="primary" @click="currentStep = 3">Approve</v-btn>
@@ -53,13 +40,8 @@
             <small>Maximum at a time is 6 minutes</small>
             <v-stepper-content step="3">
               <v-col cols="12" sm="6" md="3">
-                <v-text-field
-                  v-model="time"
-                  value="0"
-                  label="Time"
-                  outlined
-                  :rules="[rules.required, rules.validNumber, rules.maxTime]"
-                ></v-text-field>
+                <v-text-field v-model="time" value="0" label="Time" outlined
+                  :rules="[rules.required, rules.validNumber, rules.maxTime]"></v-text-field>
               </v-col>
               <v-btn @click="currentStep = 2">Back</v-btn>
               <v-space></v-space>
@@ -69,11 +51,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn
-            color="green darken-1"
-            text
-            @click="$store.state.showPurchaseTimeForm = false"
-          >Close</v-btn>
+          <v-btn color="green darken-1" text @click="$store.state.showPurchaseTimeForm = false">Close</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -182,6 +160,7 @@ export default {
               }
             })
             .catch((error) => {
+              console.log("error approving: ", error)
               this.$store.dispatch("hideLoading");
               this.$store.dispatch("showAlert", {
                 message:
@@ -197,6 +176,7 @@ export default {
       var receipt = this.$store.state.sablier.methods
         .createStream(
           this.$store.state.adminAddress,
+          this.ethAddress,
           this.deposit,
           this.tokenAddress,
           this.startDate,
@@ -205,12 +185,10 @@ export default {
         .send({ gas: 6000000, from: this.ethAddress })
         .then(async (receipt, error) => {
           if (error) {
-            await Promse.resolve(
-              this.$store.dispatch("showAlert", {
-                message:
-                  "Something went wrong please ensure you have a sufficient balance and try again!!",
-              })
-            );
+            await this.$store.dispatch("showAlert", {
+              message:
+                "Something went wrong please ensure you have a sufficient balance and try again!!",
+            });
             this.$store.dispatch("hideLoading");
           } else {
             var streamId = receipt.events.CreateStream.returnValues.streamId;

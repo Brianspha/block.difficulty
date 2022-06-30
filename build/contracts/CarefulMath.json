@@ -1,9 +1,9 @@
 {
   "abiDefinition": [],
-  "deployedAddress": "0x28ee96365671927fd1bC1F2fCD9b9F6f7Cb01E56",
+  "deployedAddress": "0xA55559c8547765afee8F6606b45f20b12197e5F0",
   "className": "CarefulMath",
   "args": [],
-  "gas": 73263,
+  "gas": 70409,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -34,5 +34,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\shared-contracts\\compound\\CarefulMath.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xfd050f13342a85671388c5326c450a95624251037b6bcf4b0096a32be5876e2d"
+  "transactionHash": "0x7c51bb0f1f969b0097cc98918e9dbeea9da3086b659c3c76e74520768b9ee871"
 }

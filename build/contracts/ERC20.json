@@ -302,10 +302,10 @@
       "signature": "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925"
     }
   ],
-  "deployedAddress": "0xE7BD9713067be3Cef86c01b0D50Ee9083EcE60B2",
+  "deployedAddress": "0x91d0df0762EABF67AB7c27e758D86d1d17d2817D",
   "className": "ERC20",
   "args": [],
-  "gas": 922913,
+  "gas": 889666,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -363,5 +363,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\ERC20.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xa103ce08f4b6459e920e4c592c3fbad74fee7c5f0b1ea700656bc257024e1284"
+  "transactionHash": "0x24b8ade244d7d2be825fb8a673ea008a91cd1adafea910e7bc0aa7e09e042fb2"
 }

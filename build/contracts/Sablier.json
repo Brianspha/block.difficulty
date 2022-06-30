@@ -841,12 +841,12 @@
       "signature": "0xca3e6079b726e7728802a0537949e2d1c7762304fa641fb06eb56daf2ba8c6b9"
     }
   ],
-  "deployedAddress": "0xD854fdc86Ae4121C58A7AeAd037cBeDc1c94D529",
+  "deployedAddress": "0xcbf8e8f728aDD8CA5e20659FDff0B8A5659ac83D",
   "className": "Sablier",
   "args": [
-    "0x3Ec0492630c2569faBaFe69E6Fa9549c0BFeD9A0"
+    "0xF5FD7cc5840ad6f6e62cE0e9f5eA7BE228F56c6F"
   ],
-  "gas": 4564026,
+  "gas": 4406972,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -934,5 +934,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\Sablier.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0x0c74ca878067bbfc06c43dc589f5e71259574485d501b72a2b6c9a49478f0feb"
+  "transactionHash": "0x6e47a177c41fb7cc11a3ca4735fe75bd70fbcfd1ffa122619c2596c395e71827"
 }

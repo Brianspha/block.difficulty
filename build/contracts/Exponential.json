@@ -1,9 +1,9 @@
 {
   "abiDefinition": [],
-  "deployedAddress": "0x90ABCef147bB32b5dBcB5b1C2F6Dc459fe114e0a",
+  "deployedAddress": "0x169ce6175A7d9D4085367D4C6FD8c94e5678E5e5",
   "className": "Exponential",
   "args": [],
-  "gas": 73348,
+  "gas": 72187,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -47,5 +47,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\shared-contracts\\compound\\Exponential.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0xf40fc474d5617b1f411986093ce9f0929232b3305b9d3014fef166354c7cbb00"
+  "transactionHash": "0x97cfc1c77e113f449def22cecd1819720ed4f8549f139926d1a49f398b38bfc7"
 }

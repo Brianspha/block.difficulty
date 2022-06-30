@@ -312,10 +312,10 @@
       "signature": "0xfffb6291"
     }
   ],
-  "deployedAddress": "0x562eB061E0166Ebb53A58b0Dd0E3b9fB82529f9F",
+  "deployedAddress": "0xf367413fad361AD971C1333f221723570d8f117A",
   "className": "BlockDotDifficultyTournamentManager",
   "args": [],
-  "gas": 1446314,
+  "gas": 1458271,
   "gasPrice": "20000000000",
   "silent": false,
   "track": true,
@@ -374,5 +374,5 @@
   "path": "C:\\Users\\Spha\\Documents\\Github\\block.difficulty\\contracts\\BlockDotDifficultyTournamentManager.sol",
   "type": "file",
   "deploymentAccount": "0x6Bb26B7893C6Aad51A429F445E0F9a625B0ef3E0",
-  "transactionHash": "0x5ab32ac221082e9b9106c0e535123712237cc35a3b911c735f2a6b087e1dbd7b"
+  "transactionHash": "0xfbb8c63e431e586c0f454614be1ffe34869fa470826f53f033a340e094a90ab5"
 }
