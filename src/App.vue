@@ -12,7 +12,7 @@
   </v-app>
 </template>
 <script>
-import playVideo from "./widgets/playVideo";
+import playVideo from "./widgets/PlayVideo.vue";
 import EmbarkJS from "../embarkArtifacts/embarkjs";
 import Web3 from "web3";
 export default {
